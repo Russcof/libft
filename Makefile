@@ -6,7 +6,7 @@
 #    By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/06 10:01:48 by mtellal           #+#    #+#              #
-#    Updated: 2020/12/06 16:45:09 by mtellal          ###   ########.fr        #
+#    Updated: 2020/12/08 18:00:27 by mtellal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 %.o: %.c
-	$(CC) -o $@ -c $<
+	$(CC) -o $@ -c $< $(FLAGS)
 
 $(NAME): $(OBJ) libft.h
 	ar rc $@ $<
