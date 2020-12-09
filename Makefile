@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
-SRC = ft_memset.c ft_bzero.c
+SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memchr.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -25,7 +25,7 @@ all: $(NAME)
 %.o: %.c
 	$(CC) -o $@ -c $< $(FLAGS)
 
-$(NAME): $(OBJ) libft.h
+$(NAME): $(OBJ)
 	ar rc $@ $<
 	ranlib $@
 
