@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 13:59:02 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/06 16:48:20 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/10 22:10:07 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-<<<<<<< HEAD
-	ft_memset(s, 0, n);
-=======
 	unsigned char *tab;
 
 	tab = s;
@@ -24,5 +21,4 @@ void	ft_bzero(void *s, size_t n)
 	{
 		*tab++ = '\0';
 	}
->>>>>>> 10503954ae2af7d9b12805eb755d414987f881e3
 }

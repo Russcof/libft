@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/06 16:35:46 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/06 16:44:50 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/10 22:09:03 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char *tab;
 
 	tab = s;
-<<<<<<< HEAD
-	while (*tab && n--)
-=======
 	while (n--)
->>>>>>> 10503954ae2af7d9b12805eb755d414987f881e3
 	{
 		*tab++ = c;
 	}
