@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/08 16:54:15 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/10 22:11:40 by mtellal          ###   ########.fr       */
+/*   Created: 2020/12/10 20:53:30 by mtellal           #+#    #+#             */
+/*   Updated: 2020/12/10 20:57:18 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libtf.h"
 
-void	*ft_memccpy(void *dest, void const *src, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *tab;
-	unsigned char *tab1;
+	unsigned char *c1;
+	unsigned char *c2;
 
-	tab = dest;
-	tab1 = src;
+	c1 = s1;
+	c2 = s2;
 	while (n--)
 	{
-		if (*tab == c)
+		if (*c1 != *c2)
 		{
-			return ((void *)(tab + 1));
+			return (*c1 - *c2);
 		}
-		*tab++;
+		c1++;
+		c2++;
 	}
-	return (NULL);
+	return (0);
 }
