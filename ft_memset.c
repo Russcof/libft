@@ -17,7 +17,11 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char *tab;
 
 	tab = s;
+<<<<<<< HEAD
 	while (*tab && n--)
+=======
+	while (n--)
+>>>>>>> 10503954ae2af7d9b12805eb755d414987f881e3
 	{
 		*tab++ = c;
 	}

@@ -14,5 +14,15 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+<<<<<<< HEAD
 	ft_memset(s, 0, n);
+=======
+	unsigned char *tab;
+
+	tab = s;
+	while (n--)
+	{
+		*tab++ = '\0';
+	}
+>>>>>>> 10503954ae2af7d9b12805eb755d414987f881e3
 }
