@@ -6,11 +6,7 @@
 #    By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/06 10:01:48 by mtellal           #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2020/12/09 14:18:52 by mtellal          ###   ########.fr        #
-=======
-#    Updated: 2020/12/08 18:00:27 by mtellal          ###   ########.fr        #
->>>>>>> 10503954ae2af7d9b12805eb755d414987f881e3
+#    Updated: 2020/12/11 16:25:06 by mtellal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,20 +16,20 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
-SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memchr.c
+SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memchr.c \
+      ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
+      ft_strcat.c ft_strncat.c
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 %.o: %.c
-	$(CC) -o $@ -c $< $(FLAGS)
+	$(CC) -o $@ -c $< $(CFLAGS)
 
-<<<<<<< HEAD
 $(NAME): $(OBJ) libft.h
-=======
+
 $(NAME): $(OBJ)
->>>>>>> 10503954ae2af7d9b12805eb755d414987f881e3
 	ar rc $@ $<
 	ranlib $@
 

@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 14:08:54 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/10 22:11:50 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/11 11:18:00 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char *tab;
+	const char *tab;
 
 	tab = s;
 	while (n--)
 	{
 		if (*tab == c)
 		{
-			return (tab);
+			return ((void *)tab);
 		}
 		tab++;
 	}

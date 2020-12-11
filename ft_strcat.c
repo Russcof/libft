@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 20:53:30 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/11 11:15:11 by mtellal          ###   ########.fr       */
+/*   Created: 2020/12/11 15:50:26 by mtellal           #+#    #+#             */
+/*   Updated: 2020/12/11 15:53:17 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strcat(char *dest, const char *src)
 {
-	unsigned const char *c1;
-	unsigned const char *c2;
+	char *p;
 
-	c1 = s1;
-	c2 = s2;
-	while (n--)
+	p = dest;
+	while (*dest != '\0')
 	{
-		if (*c1 != *c2)
-		{
-			return (*c1 - *c2);
-		}
-		c1++;
-		c2++;
+		dest++;
 	}
-	return (0);
+	while (*src != '\0')
+	{
+		*dest++ = *src++;
+	}
+	*dest = '\0';
+	return (p);
 }
