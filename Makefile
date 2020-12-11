@@ -6,7 +6,7 @@
 #    By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/06 10:01:48 by mtellal           #+#    #+#              #
-#    Updated: 2020/12/11 16:25:06 by mtellal          ###   ########.fr        #
+#    Updated: 2020/12/11 17:24:41 by mtellal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,8 @@ all: $(NAME)
 $(NAME): $(OBJ) libft.h
 
 $(NAME): $(OBJ)
-	ar rc $@ $<
-	ranlib $@
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJ)
