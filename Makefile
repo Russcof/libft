@@ -6,7 +6,7 @@
 #    By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/06 10:01:48 by mtellal           #+#    #+#              #
-#    Updated: 2020/12/11 17:24:41 by mtellal          ###   ########.fr        #
+#    Updated: 2020/12/11 17:26:20 by mtellal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,6 @@ all: $(NAME)
 
 %.o: %.c
 	$(CC) -o $@ -c $< $(CFLAGS)
-
-$(NAME): $(OBJ) libft.h
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
