@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 14:17:44 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/11 16:24:53 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/12 12:03:21 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ char		*ft_strncpy(char *dest, const char *src, size_t n);
 char		*ft_strcpy(char *dest, const char *src);
 char		*ft_strcat(char *dest, const char *src);
 char		*ft_strncat(char *dest, const char *src, size_t n);
-
+size_t		ft_strlcat(char *dst, const char *src, size_t taille);
+char		*ft_strchr(const char *s, int c);
+char		*ft_strrchr(const char *s, int c);
+char		*ft_strstr(const char *meule_de_foin, const char *aiguille);
 #endif
