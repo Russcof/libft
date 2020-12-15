@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 14:17:44 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/13 19:57:00 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/15 18:46:17 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void		*ft_calloc(size_t nmemb, size_t size);
 void		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s);
+char		**ft_split(char const *s, char c);
 #endif
