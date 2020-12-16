@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 19:34:01 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/13 19:41:40 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/16 16:19:21 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s)
 			i++;
 	s = r;
 	if ((tab = (char *)malloc(sizeof(char) * (ft_strlen(s) - i)
-					+ 1)) == 	NULL)
+					+ 1)) == NULL)
 		return (NULL);
 	r = tab;
 	while ((*s == '\n' || *s == '\t' || *s == ' ') && *s != '\0')
