@@ -6,7 +6,7 @@
 #    By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/06 10:01:48 by mtellal           #+#    #+#              #
-#    Updated: 2020/12/16 19:04:24 by mtellal          ###   ########.fr        #
+#    Updated: 2020/12/17 21:47:50 by mtellal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,10 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memchr.c \
       ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
       ft_putnbr_fd.c
 	
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+	ft_lstclear.c ft_lstiter.c
+
+OBJB = $(BONUS:.c=.o)
 
 OBJ = $(SRC:.c=.o)
 
@@ -35,10 +39,12 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+
+bonus: $(OBJ) $(OBJB)
+	ar rc $(NAME) $(OBJ) $(OBJB)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJB)
 
 fclean: clean
 	rm -f $(NAME)
