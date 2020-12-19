@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:18:40 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/17 22:22:44 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/19 22:52:32 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, void const *src, size_t n)
 
 	tab = (unsigned char *)dest;
 	tab1 = (unsigned char *)src;
-	if (!dest || !src)
+	if (!dest && !src)
 		return (dest);
 	while (n--)
 	{
