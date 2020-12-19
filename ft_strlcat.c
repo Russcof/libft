@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 11:03:26 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/12 11:13:20 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/19 22:44:09 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,23 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t taille)
 {
-	size_t t;
+	size_t	i;
 
-	t = ft_strlen(dst) + ft_strlen(src);
-	while (*dst != '\0')
+	i = 0;
+	while (*dst && i < taille)
 	{
 		dst++;
-		taille--;
+		i++;
 	}
-	while (*src != '\0' && taille > 1)
+	if (i == taille)
+		return (i + ft_strlen(sr));
+	while (*src)
 	{
-		*dst++ = *src++;
-		taille--;
+		if (i < taille - 1)
+			*dst++ = *src;
+		src++;
+		i++;
 	}
 	*dst = '\0';
-	return (t);
+	return (i + ft_strlen(src));
 }
