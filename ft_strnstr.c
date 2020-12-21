@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 14:08:05 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/21 17:05:50 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/21 17:07:59 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *meule_de_foin, const char *aiguille, size_t n)
 
 	i = 0;
 	j = 0;
-	if (!aiguille)
+	if (!aiguille[0])
 		return ((char*)meule_de_foin);
 	while (meule_de_foin[i] && i < n)
 	{
