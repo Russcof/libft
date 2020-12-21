@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 18:30:38 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/15 18:58:38 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/21 14:48:56 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ unsigned int		ft_nlettre(char const *s, char c)
 	a = s;
 	while (*a == c && *a != '\0')
 		a++;
-	while (*a != c && *a != '\0')
+	while (*a != c && *a++ != '\0')
 		l++;
 	return (l);
 }

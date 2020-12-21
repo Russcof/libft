@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 11:56:34 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/12 12:10:15 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/21 14:45:47 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,22 @@ char	*ft_strstr(const char *meule_de_foin, const char *aiguille)
 
 	a = (char *)aiguille;
 	i = 0;
+	if (*aiguille == '\0')
+		return ((char *)meule_de_foin);
 	while (*meule_de_foin != '\0')
 	{
-		if (*meule_de_foin == *aiguille)
+		while (*meule_de_foin == *aiguille && *aiguille != '\0')
 		{
 			i++;
 			aiguille++;
-			if (i == ft_strlen(a) && *aiguille == '\0')
-				return ((char *)(meule_de_foin - ft_strlen(a) + 1));
+			meule_de_foin++;
 		}
-		else
-		{
-			i = 0;
-			aiguille = a;
-		}
+		if (i == ft_strlen(a) && *aiguille == '\0')
+			return ((char *)(meule_de_foin - i));
+		meule_de_foin -= i;
+		aiguille -= i;
+		i = 0;
+		meule_de_foin++;
 	}
 	return (NULL);
 }
