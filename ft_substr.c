@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 15:59:14 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/13 16:27:55 by mtellal          ###   ########.fr       */
+/*   Updated: 2020/12/23 17:04:09 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,20 @@
 
 void	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void			*p;
-	char			*tab;
-	unsigned int	i;
+	char	*tab;
 
-	i = 0;
-	tab = NULL;
-	p = NULL;
-	while (*s != '\0')
+	if (!s)
+		return (NULL);
+	if (ft_strlen(s) <= start)
 	{
-		if (i == start && ft_strlen(s) >= len)
-		{
-			if ((tab = (char *)malloc(len * sizeof(char) + 1)) == NULL)
-				return (NULL);
-			p = (void *)tab;
-			ft_strncpy(tab, s, len);
-		}
-		s++;
-		i++;
+		if (!(tab = (char *)malloc(sizeof(char))))
+			return (NULL);
+		*tab = '\0';
+		return (tab);
 	}
+	if (!(tab = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	tab = ft_strncpy(tab, (s + start), len);
 	*(tab + len) = '\0';
-	return (p);
+	return (tab);
 }
