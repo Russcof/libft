@@ -6,38 +6,56 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 19:34:01 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/21 14:48:19 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/02 16:37:53 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+int		ft_belong(const char c, const char *set)
+{
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
+int		ft_none(const char *s, const char *set)
+{
+	while (*s)
+	{
+		if (!ft_belong(*s, set))
+			return (1);
+		s++;
+	}
+	return (0);
+}
+
+char	*ft_strtrim(char const *s, char const *set)
 {
 	char			*tab;
-	unsigned int	i;
+	int				i;
 	char const		*r;
 
 	i = 0;
-	tab = NULL;
 	r = s;
 	if (s == NULL)
 		return (NULL);
-	while (*s != '\0')
-	{
-		if (*s == '\n' || *s == '\t' || *s == ' ')
-			i++;
-		s++;
-	}
-	s = r;
-	if ((tab = (char *)malloc(sizeof(char) * (ft_strlen(s) - i)
-					+ 1)) == NULL)
+	while (ft_belong(s[i], set) && s[i])
+		i++;
+	s = r + ft_strlen(r) - 1;
+	while (ft_belong(*s, set) && *s--)
+		i++;
+	if (i == (int)(2 * ft_strlen(r)))
+		i = ft_strlen(r) - 1;
+	if (!(tab = (char*)malloc(sizeof(char) * (ft_strlen(r) - i) + 1)))
 		return (NULL);
-	r = tab;
-	while ((*s == '\n' || *s == '\t' || *s == ' ') && *s != '\0')
-		s++;
-	while ((!(*s == '\n' || *s == '\t' || *s == ' ')) && *s != '\0')
-		*tab++ = *s++;
-	*tab = '\0';
-	return ((char *)r);
+	i = ft_strlen(r) - i;
+	tab[i--] = '\0';
+	while (i >= 0)
+		tab[i--] = *s--;
+	return (tab);
 }
