@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 18:40:58 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/16 18:42:10 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/04 10:36:05 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return ((void)NULL);
 	write(fd, s, ft_strlen(s));
 }
