@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 14:17:44 by mtellal           #+#    #+#             */
-/*   Updated: 2021/01/04 13:10:23 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/04 15:56:57 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char			*strdup(const char *s);
 size_t			ft_strlen(const char *s);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
 char			*ft_strcpy(char *dest, const char *src);
+size_t			ft_strlcpy(char *dst, const char *src, size_t n);
 char			*ft_strcat(char *dest, const char *src);
 char			*ft_strncat(char *dest, const char *src, size_t n);
 size_t			ft_strlcat(char *dst, const char *src, size_t taille);
