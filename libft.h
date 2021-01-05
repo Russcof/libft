@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 14:17:44 by mtellal           #+#    #+#             */
-/*   Updated: 2021/01/04 15:56:57 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/04 17:13:06 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <string.h>
 # include <stddef.h>
 # include <unistd.h>
