@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:08:09 by mtellal           #+#    #+#             */
-/*   Updated: 2021/01/03 14:15:47 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/07 11:06:11 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_itoa(int n)
 	}
 	tab[zero--] = '\0';
 	if (n == 0)
-		tab = "0";
+		tab[zero] = '0';
 	while (o > 0)
 	{
 		tab[zero--] = (unsigned char)((o % 10) + '0');
