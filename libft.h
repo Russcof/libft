@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 14:17:44 by mtellal           #+#    #+#             */
-/*   Updated: 2021/01/04 17:13:06 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/07 19:34:33 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void			*ft_memccpy(void *dest, void const *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *dest, void const *src, size_t n);
-char			*strdup(const char *s);
+char			*ft_strdup(const char *s);
 size_t			ft_strlen(const char *s);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
 char			*ft_strcpy(char *dest, const char *src);
