@@ -6,13 +6,13 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 18:30:38 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/21 14:48:56 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/08 20:19:11 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int		ft_nmot(char const *s, char c)
+static unsigned int		ft_nmot(char const *s, char c)
 {
 	unsigned int	m;
 	char const		*a;
@@ -32,7 +32,7 @@ unsigned int		ft_nmot(char const *s, char c)
 	return (m);
 }
 
-unsigned int		ft_nlettre(char const *s, char c)
+static unsigned int		ft_nlettre(char const *s, char c)
 {
 	unsigned int	l;
 	char const		*a;
@@ -46,37 +46,47 @@ unsigned int		ft_nlettre(char const *s, char c)
 	return (l);
 }
 
-void				ft_scpy(char *d, char const *s, unsigned int i)
+static void	ft_scpy(char *d, char const *s, unsigned int i)
 {
 	while (i-- > 0)
 		*d++ = *s++;
 	*d = '\0';
 }
 
-char				**ft_split(char const *s, char c)
+static char	*ft_clean(char **t, int i)
 {
-	char			**t;
-	char			*tab;
-	unsigned int	mot;
+	while (i > 0)
+	{
+		free(t[i]);
+		i--;
+	}
+	free(t);
+	return (NULL);
+}
 
-	tab = NULL;
-	mot = ft_nmot(s, c);
+char	**ft_split(char const *s, char c)
+{
+	char	**t;
+	char	*tab;
+	int		i;
+
+	i = 0;
 	if (!s || (t = (char **)malloc(sizeof(char *) * (mot + 1))) == NULL)
 		return (NULL);
 	while (*s != '\0')
 	{
 		if (*s != c)
 		{
-			if ((tab = (char *)malloc(sizeof(char) * ft_nlettre(s, c)
-							+ 1)) == NULL)
-				return (NULL);
+			if (!(tab = (char *)malloc(sizeof(char) * ft_nlettre(s, c) + 1)))
+				return (ft_clean(t, i));
 			ft_scpy(tab, s, ft_nlettre(s, c));
 			*t++ = tab;
+			i++;
 			while (*s != c && *(s + 1) != '\0')
 				s++;
 		}
 		s++;
 	}
 	*t = 0;
-	return ((t - mot));
+	return (t - i);
 }
