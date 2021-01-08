@@ -6,15 +6,15 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 18:30:38 by mtellal           #+#    #+#             */
-/*   Updated: 2021/01/08 20:19:11 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/08 20:29:57 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int		ft_nmot(char const *s, char c)
+static int		ft_nmot(char const *s, char c)
 {
-	unsigned int	m;
+	int				m;
 	char const		*a;
 
 	m = 0;
@@ -32,9 +32,9 @@ static unsigned int		ft_nmot(char const *s, char c)
 	return (m);
 }
 
-static unsigned int		ft_nlettre(char const *s, char c)
+static int		ft_nlettre(char const *s, char c)
 {
-	unsigned int	l;
+	int				l;
 	char const		*a;
 
 	l = 0;
@@ -46,14 +46,14 @@ static unsigned int		ft_nlettre(char const *s, char c)
 	return (l);
 }
 
-static void	ft_scpy(char *d, char const *s, unsigned int i)
+static void		ft_scpy(char *d, char const *s, unsigned int i)
 {
 	while (i-- > 0)
 		*d++ = *s++;
 	*d = '\0';
 }
 
-static char	*ft_clean(char **t, int i)
+static char		*ft_clean(char **t, int i)
 {
 	while (i > 0)
 	{
@@ -64,7 +64,7 @@ static char	*ft_clean(char **t, int i)
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**t;
 	char	*tab;
