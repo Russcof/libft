@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/13 15:59:14 by mtellal           #+#    #+#             */
-/*   Updated: 2020/12/23 17:04:09 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/09 16:14:16 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	if (!(tab = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	tab = ft_strncpy(tab, (s + start), len);
-	*(tab + len) = '\0';
+	ft_strlcpy(tab, (s + start), len + 1);
 	return (tab);
 }
