@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 18:30:38 by mtellal           #+#    #+#             */
-/*   Updated: 2021/01/08 20:29:57 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/09 15:56:09 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,15 @@ char			**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
-	if (!s || (t = (char **)malloc(sizeof(char *) * (mot + 1))) == NULL)
+	if (!s || (t = (char **)malloc(sizeof(char *) *
+					(ft_nmot(s, c) + 1))) == NULL)
 		return (NULL);
 	while (*s != '\0')
 	{
 		if (*s != c)
 		{
 			if (!(tab = (char *)malloc(sizeof(char) * ft_nlettre(s, c) + 1)))
-				return (ft_clean(t, i));
+				return ((char**)ft_clean(t, i));
 			ft_scpy(tab, s, ft_nlettre(s, c));
 			*t++ = tab;
 			i++;
