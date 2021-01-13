@@ -6,13 +6,13 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:08:09 by mtellal           #+#    #+#             */
-/*   Updated: 2021/01/07 11:06:11 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/13 14:29:25 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_ndigit(long n)
+static int	ft_ndigit(long n)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ int		ft_ndigit(long n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*tab;
 	int		zero;
