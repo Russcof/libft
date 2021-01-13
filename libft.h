@@ -6,7 +6,7 @@
 /*   By: mtellal <mtellal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 14:17:44 by mtellal           #+#    #+#             */
-/*   Updated: 2021/01/08 19:57:44 by mtellal          ###   ########.fr       */
+/*   Updated: 2021/01/13 18:18:18 by mtellal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <string.h>
+# include <stddef.h>
 # include <unistd.h>
 
 typedef struct	s_list
